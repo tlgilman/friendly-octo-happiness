@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Company>Justanswer.com LLC</Company>
+    <Authors>Optimus</Authors>
+    <Copyright>Copyright © Justanswer.com LLC 2024</Copyright>
+    <TargetFramework>net8.0</TargetFramework>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <IsPackable>false</IsPackable>
+    <IsPublishable>false</IsPublishable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="TestCases\ping.test.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AwesomeAssertions" Version="9.3.0" />
+    <PackageReference Include="JA.Logging.Sinks.Serilog.InMemory" Version="1.0.0" />
+    <PackageReference Include="nunit" Version="4.2.2" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.6.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+    <PackageReference Include="Tests.Common" Version="1.0.4" />
+    <PackageReference Include="Tests.Serilog" Version="1.0.0" />
+    <PackageReference Include="Web.IntegrationTests.Engine" Version="2.13.0" />
+    <PackageReference Include="coverlet.collector" Version="6.0.2">
+    <PrivateAssets>all</PrivateAssets>
+    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Src\TravelGuideApi\TravelGuideApi.csproj" />
+  </ItemGroup>
+
+</Project>

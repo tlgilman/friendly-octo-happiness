@@ -1,0 +1,22 @@
+/*
+ * Tries to request ping route
+ */
+[
+  {
+    "Name": "PingRequest",
+    "Request": {
+      "Version": "1.1",
+      "Method": "GET",
+      "Headers": {
+        "X-forwarded-for": "192.168.0.1"
+      },
+      "RequestUri": "/api/ping"
+    },
+    "JsonPathAssertions": [
+      // Response should have status code 200
+      "$.[?(@.StatusCode == 200)]",
+      // Response should have correct content
+      "$.[?(@.Content == 'test 1.0.0')]"
+    ]
+  }
+]
