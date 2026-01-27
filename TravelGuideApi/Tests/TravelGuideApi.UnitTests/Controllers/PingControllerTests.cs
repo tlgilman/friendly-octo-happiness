@@ -10,7 +10,7 @@ namespace TravelGuideApi.UnitTests.Controllers;
 [TestFixture]
 public class PingControllerTests
 {
-    private Mock<IOptions<Config>> _optionsMock;
+    private Mock<IOptions<Config>> _optionsMock = null!;
 
     [SetUp]
     public void Setup()

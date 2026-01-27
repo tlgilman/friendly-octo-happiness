@@ -18,9 +18,9 @@ namespace TravelGuideApi.UnitTests.Controllers.v1;
 [TestFixture]
 public class ComparisonControllerTests
 {
-    private Mock<ILogger<ComparisonController>> _loggerMock;
-    private Mock<IMediator> _mediatorMock;
-    private ComparisonController _controller;
+    private Mock<ILogger<ComparisonController>> _loggerMock = null!;
+    private Mock<IMediator> _mediatorMock = null!;
+    private ComparisonController _controller = null!;
 
     [SetUp]
     public void Setup()

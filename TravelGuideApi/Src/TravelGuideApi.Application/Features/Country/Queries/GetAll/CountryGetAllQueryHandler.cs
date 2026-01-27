@@ -27,7 +27,7 @@ public class CountryGetAllQueryHandler(
         CancellationToken cancellationToken)
     {
         // Try to get from cache first
-        IEnumerable<CountryEntity> cachedCountries = await _countryCache.GetAllAsync();
+        IEnumerable<CountryEntity>? cachedCountries = await _countryCache.GetAllAsync();
         if (cachedCountries != null)
         {
             _logger.LogInformation("Returning cached countries data");

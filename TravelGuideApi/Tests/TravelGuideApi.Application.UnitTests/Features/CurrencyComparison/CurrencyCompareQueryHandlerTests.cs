@@ -15,11 +15,11 @@ namespace TravelGuideApi.Application.UnitTests.Features.CurrencyComparison;
 [TestFixture]
 public class CurrencyCompareQueryHandlerTests
 {
-    private Mock<ICountryApiService> _countryApiServiceMock;
-    private Mock<IExchangeRateApiService> _exchangeRateApiServiceMock;
-    private Mock<ICountryCache> _countryCacheMock;
-    private Mock<ILogger<CurrencyCompareQueryHandler>> _loggerMock;
-    private CurrencyCompareQueryHandler _handler;
+    private Mock<ICountryApiService> _countryApiServiceMock = null!;
+    private Mock<IExchangeRateApiService> _exchangeRateApiServiceMock = null!;
+    private Mock<ICountryCache> _countryCacheMock = null!;
+    private Mock<ILogger<CurrencyCompareQueryHandler>> _loggerMock = null!;
+    private CurrencyCompareQueryHandler _handler = null!;
 
     [SetUp]
     public void Setup()

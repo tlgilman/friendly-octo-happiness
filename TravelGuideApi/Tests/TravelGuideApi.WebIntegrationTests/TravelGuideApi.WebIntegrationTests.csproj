@@ -5,6 +5,7 @@
     <Authors>Optimus</Authors>
     <Copyright>Copyright © Justanswer.com LLC 2024</Copyright>
     <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
     <PreserveCompilationContext>true</PreserveCompilationContext>
     <IsPackable>false</IsPackable>
     <IsPublishable>false</IsPublishable>

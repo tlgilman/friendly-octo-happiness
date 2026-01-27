@@ -12,9 +12,9 @@ namespace TravelGuideApi.UnitTests.Services;
 [TestFixture]
 public class ExchangeRateCacheTests
 {
-    private IMemoryCache _memoryCache;
-    private Mock<ILogger<ExchangeRateCache>> _loggerMock;
-    private ExchangeRateCache _cache;
+    private IMemoryCache _memoryCache = null!;
+    private Mock<ILogger<ExchangeRateCache>> _loggerMock = null!;
+    private ExchangeRateCache _cache = null!;
 
     [SetUp]
     public void Setup()

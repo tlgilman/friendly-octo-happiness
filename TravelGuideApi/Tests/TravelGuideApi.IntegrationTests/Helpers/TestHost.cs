@@ -11,7 +11,7 @@ public class TestHost
 {
     private readonly TestServer _testServer;
 
-    public TestHost(Action<IServiceCollection> configureMock = null)
+    public TestHost(Action<IServiceCollection>? configureMock = null)
     {
         WebApplicationFactory<Startup> factory = new WebApplicationFactory<Startup>()
            .WithWebHostBuilder(builder => builder
@@ -29,7 +29,7 @@ public class TestHost
 
     public HttpClient HttpClient { get; }
 
-    public TService GetService<TService>() => _testServer.Services.GetRequiredService<TService>();
+    public TService GetService<TService>() where TService : class => _testServer.Services.GetRequiredService<TService>();
 
     public async Task StopAndDispose()
     {

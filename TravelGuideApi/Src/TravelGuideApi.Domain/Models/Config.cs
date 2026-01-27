@@ -8,7 +8,7 @@ namespace TravelGuideApi.Domain.Models;
 /// <param name="ExchangeRateApiBaseUrl">Base URL for the Exchange Rate API.</param>
 public record Config(string PingValue, string CountryApiUrl, string ExchangeRateApiBaseUrl)
 {
-    public Config() : this(default(string), default(string), default(string))
+    public Config() : this(string.Empty, string.Empty, string.Empty)
     {
     }
 }

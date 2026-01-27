@@ -16,10 +16,10 @@ namespace TravelGuideApi.Application.UnitTests.Features.Country;
 [TestFixture]
 public class CountryGetAllQueryHandlerTests
 {
-    private Mock<ICountryApiService> _countryApiServiceMock;
-    private Mock<ICountryCache> _countryCacheMock;
-    private Mock<ILogger<CountryGetAllQueryHandler>> _loggerMock;
-    private CountryGetAllQueryHandler _handler;
+    private Mock<ICountryApiService> _countryApiServiceMock = null!;
+    private Mock<ICountryCache> _countryCacheMock = null!;
+    private Mock<ILogger<CountryGetAllQueryHandler>> _loggerMock = null!;
+    private CountryGetAllQueryHandler _handler = null!;
 
     [SetUp]
     public void Setup()

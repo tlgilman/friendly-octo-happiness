@@ -14,9 +14,9 @@ namespace TravelGuideApi.UnitTests.Services;
 [TestFixture]
 public class CountryCacheTests
 {
-    private IMemoryCache _memoryCache;
-    private Mock<ILogger<CountryCache>> _loggerMock;
-    private CountryCache _cache;
+    private IMemoryCache _memoryCache = null!;
+    private Mock<ILogger<CountryCache>> _loggerMock = null!;
+    private CountryCache _cache = null!;
 
     [SetUp]
     public void Setup()

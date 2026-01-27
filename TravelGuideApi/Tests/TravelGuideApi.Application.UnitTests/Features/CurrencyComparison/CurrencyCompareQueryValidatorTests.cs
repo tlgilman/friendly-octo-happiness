@@ -8,7 +8,7 @@ namespace TravelGuideApi.Application.UnitTests.Features.CurrencyComparison;
 [TestFixture]
 public class CurrencyCompareQueryValidatorTests
 {
-    private CurrencyCompareQueryValidator _validator;
+    private CurrencyCompareQueryValidator _validator = null!;
 
     [SetUp]
     public void Setup()

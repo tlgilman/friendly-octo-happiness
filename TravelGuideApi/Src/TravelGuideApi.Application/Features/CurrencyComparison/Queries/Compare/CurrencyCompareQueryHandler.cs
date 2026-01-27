@@ -35,10 +35,10 @@ public class CurrencyCompareQueryHandler(
             request.DestinationCountryCode);
 
         // Get countries (try cache first, then API)
-        CountryEntity homeCountry = await _countryCache.GetByCodeAsync(request.HomeCountryCode)
+        CountryEntity? homeCountry = await _countryCache.GetByCodeAsync(request.HomeCountryCode)
             ?? await _countryApiService.GetCountryByCodeAsync(request.HomeCountryCode);
 
-        CountryEntity destinationCountry = await _countryCache.GetByCodeAsync(request.DestinationCountryCode)
+        CountryEntity? destinationCountry = await _countryCache.GetByCodeAsync(request.DestinationCountryCode)
             ?? await _countryApiService.GetCountryByCodeAsync(request.DestinationCountryCode);
 
         if (homeCountry == null)
