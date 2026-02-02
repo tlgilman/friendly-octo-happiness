@@ -3,3 +3,4 @@ obj/
 bin/
 Bin/
 .vscode
+package-lock.json
