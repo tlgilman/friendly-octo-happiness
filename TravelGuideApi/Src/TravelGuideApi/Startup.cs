@@ -1,8 +1,6 @@
 using Asp.Versioning;
 using FluentValidation;
 using Hellang.Middleware.ProblemDetails;
-using JA.TrackingApiClient.BackgroundServiceHost;
-using JA.TrackingApiClient.BackgroundServiceHost.Extensions;
 using TravelGuideApi.Application.Extensions;
 using TravelGuideApi.Infrastructure.Extensions;
 using TravelGuideApi.Persistence.Extensions;
@@ -62,8 +60,6 @@ public class Startup(
                 };
             });
         });
-
-        services.AddJustAnswerApiTracking(new TrackingClientConfig(_hostEnvironment));
 
         services.AddSharedInfrastructure();
         services.AddApplication();

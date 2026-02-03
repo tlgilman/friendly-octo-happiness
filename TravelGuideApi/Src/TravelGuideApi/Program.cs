@@ -1,19 +1,19 @@
-using JA.Logging.Extensions.Serilog;
-using JA.Logging.Extensions.Serilog.Web;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using Serilog;
+using Serilog.Events;
 using System;
 
 namespace TravelGuideApi;
 
 public class Program
 {
+    private const string StructuredOutputTemplate = "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}";
+    private const string PlainOutputTemplate = "{Message:lj}{NewLine}{Exception}";
+
     public static void Main(string[] args)
     {
-        Log.Logger = new LoggerConfiguration()
-            .ConfigureDefaultSettings()
-            .WriteToConsole(UseStructuredLogging())
+        Log.Logger = CreateLoggerConfiguration(UseStructuredLogging())
             .CreateLogger();
 
         try
@@ -39,11 +39,31 @@ public class Program
             })
             .UseSerilog((context, services, configuration) =>
             {
-                configuration.ConfigureDefaultSettings()
-                    .AddClientEnrichers()
-                    .FilterInformationLogs(services)
-                    .WriteToConsole(UseStructuredLogging());
+                configuration
+                    .MinimumLevel.Information()
+                    .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
+                    .MinimumLevel.Override("Microsoft.Hosting.Lifetime", LogEventLevel.Information)
+                    .Enrich.FromLogContext()
+                    .Enrich.WithEnvironmentName()
+                    .Enrich.WithThreadId()
+                    .WriteTo.Console(outputTemplate: UseStructuredLogging()
+                        ? StructuredOutputTemplate
+                        : PlainOutputTemplate);
             });
+    }
+
+    private static LoggerConfiguration CreateLoggerConfiguration(bool useStructuredLogging)
+    {
+        return new LoggerConfiguration()
+            .MinimumLevel.Information()
+            .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
+            .MinimumLevel.Override("Microsoft.Hosting.Lifetime", LogEventLevel.Information)
+            .Enrich.FromLogContext()
+            .Enrich.WithEnvironmentName()
+            .Enrich.WithThreadId()
+            .WriteTo.Console(outputTemplate: useStructuredLogging
+                ? StructuredOutputTemplate
+                : PlainOutputTemplate);
     }
 
     private static bool UseStructuredLogging()
