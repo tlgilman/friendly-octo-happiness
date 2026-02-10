@@ -17,7 +17,7 @@
   <!-- Auto-install npm dependencies if node_modules is missing -->
   <Target Name="EnsureNpmDependencies" BeforeTargets="Build" Condition="!Exists('$(SpaRoot)node_modules')">
     <Message Importance="high" Text="Installing npm dependencies in $(SpaRoot)..." />
-    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install --verbose" />
   </Target>
 
   <ItemGroup>
