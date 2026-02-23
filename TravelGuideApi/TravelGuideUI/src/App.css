@@ -5,17 +5,17 @@
 }
 
 :root {
-  --gradient-start: #4f46e5;
-  --gradient-mid: #7c3aed;
-  --gradient-end: #2563eb;
+  --gradient-start: #166534;
+  --gradient-mid: #15803d;
+  --gradient-end: #16a34a;
   --card-bg: rgba(255, 255, 255, 0.95);
-  --text-primary: #1e1b4b;
-  --text-secondary: #6366f1;
+  --text-primary: #14532d;
+  --text-secondary: #22c55e;
   --text-muted: #64748b;
   --accent: #10b981;
   --accent-alt: #f59e0b;
   --border-color: #e2e8f0;
-  --shadow-color: rgba(79, 70, 229, 0.2);
+  --shadow-color: rgba(22, 101, 52, 0.2);
   --font-primary: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'Space Mono', monospace;
 }
@@ -52,7 +52,7 @@ body {
 .bg-shape-1 {
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, #818cf8 0%, transparent 70%);
+  background: radial-gradient(circle, #4ade80 0%, transparent 70%);
   top: -200px;
   right: -100px;
   animation-delay: 0s;
@@ -61,7 +61,7 @@ body {
 .bg-shape-2 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, #06b6d4 0%, transparent 70%);
+  background: radial-gradient(circle, #86efac 0%, transparent 70%);
   bottom: -150px;
   left: -100px;
   animation-delay: -7s;
@@ -70,7 +70,7 @@ body {
 .bg-shape-3 {
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, #f472b6 0%, transparent 70%);
+  background: radial-gradient(circle, #22c55e 0%, transparent 70%);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
